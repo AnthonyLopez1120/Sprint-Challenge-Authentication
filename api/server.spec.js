@@ -3,7 +3,7 @@ const server = require('./server')
 
 describe('server.js accessing routes', ()=>{
     describe('register', ()=>{
-        it('returns 200', async()=>{
+        it('returns 200 while registering new user', async()=>{
             const res = await request(server)
             .post('/api/auth/register')
             .send({
@@ -25,11 +25,11 @@ describe('server.js accessing routes', ()=>{
     })
 
     describe('Attempting to login', ()=>{
-        it('returns 200', async ()=>{
+        it('returns 200 while loging in', async ()=>{
             const res = await request(server)
-            .post('api/auth/login')
+            .post('/api/auth/login')
             .send({
-                username: "anthony",
+                username: "anthony4",
                 password: 'lopez'
             })
             expect(res.status).toBe(200)
